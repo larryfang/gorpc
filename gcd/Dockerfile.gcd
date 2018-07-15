@@ -1,0 +1,12 @@
+FROM grpc/go:1.0
+
+WORKDIR /go/src/go-kube/gcd
+ADD gcd* ./
+COPY pb /go/src/go-kube/gcd/pb
+
+RUN go get -v ./...
+RUN go install -v ./...
+
+EXPOSE 3000
+RUN go build gcd.go
+CMD [ "./gcd" ]

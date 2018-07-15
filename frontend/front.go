@@ -7,7 +7,8 @@ import (
 	"strconv"
 
 	// Change this for your own project
-	"../pb"
+	pb "github.com/larryfang/pb"
+
 	"github.com/gin-gonic/gin"
 	"google.golang.org/grpc"
 )
